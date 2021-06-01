@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: cursive;
+            font-size: 35px;
+            color: black;
+            background-color: palegoldenrod;
+        }
+        .btn1{
+            font-family: cursive;
+            font-size: 30px;
+            background-color: green;
+            color: snow;
+            border-radius: 30px;
+
+        }
+        .btn1:hover{
+            transition: all 1s;
+            background-color: black;
+            color: snow;
+        }
+        .btn2{
+            font-family: cursive;
+            font-size: 30px;
+            background-color: red;
+            color: snow;
+            border-radius: 30px;
+        }
+        .btn2:hover{
+            transition: all 1s;
+            background-color: black;
+            color: snow;
+        }
+    </style>
+    <title>JavaScript Event Challenges: Challenge 24</title>
+</head>
+
+<body>
+    <center>
+        <h1>JavaScript Event Challenges</h1>
+        <h2>Challenge 22</h2>
+
+        <div>
+            <p>Here is a paragraph of text</p>
+            <p>Here is the second paragraph</p>
+        </div>
+        <button class="btn1">Add paragraph +</button>
+        <button class="btn2">Delete paragraph -</button>
+    </center>
+    <script>
+
+        var divTag = document.querySelector('div');
+
+        var another = document.querySelectorAll('button')[0];
+        var less = document.querySelectorAll('button')[1];
+        another.addEventListener('click', function () {
+            var newP = document.createElement('p');
+            var newPtext = document.createTextNode('A new paragraph in it!');
+            newP.appendChild(newPtext);
+            divTag.appendChild(newP);
+        });
+
+        less.addEventListener('click', function () {
+            var delP = document.querySelectorAll('p');
+            divTag.removeChild(divTag.children[delP.length - 1]);
+
+        });
+
+    </script>
+</body>
+
+</html>

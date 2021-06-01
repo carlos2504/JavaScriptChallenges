@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 35px;
+            color: snow;
+            background-color: purple;
+        }
+        .btn{
+            background-color: green;
+            color: snow;
+            border-radius: 10px;
+            font-size: 35px;
+            
+        }
+        .btn:hover{
+            transition: all 1s;
+            background-color: black;
+            color: snow;
+        }
+        input{
+            border-radius: 10px;
+            border: royalblue;
+            background-color: yellow;
+            color: black;
+            font-size: 35px;
+        }
+    </style>
+    <title>JavaScript Event Challenges: Challenge 27</title>
+</head>
+
+<body>
+    <center>
+        <h1>JavaScript Event Challenges: Challenge 27</h1>
+        <form>
+            <label>Enter your title size <br><br><input type="text"></label><br><br>
+            <input type="submit" value="Send number" class="btn">
+        </form>
+    </center>
+    <script>
+        var title = document.querySelector('h1');
+        var formTags = document.querySelector('form');
+        formTags.addEventListener("submit", function (ev) {
+            ev.preventDefault();
+            var number = parseInt(document.querySelector('input').value);
+            if (number) {
+                title.style.fontSize = number + "px";
+            } else {
+                alert("You must enter a number!");
+            }
+        });
+    </script>
+</body>
+
+</html>

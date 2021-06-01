@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Challenges: Challenge 24</title>
+    <style>
+        body{
+            font-family: cursive;
+            font-size: 35px;
+            color: snow;
+            background-color: steelblue;
+        }
+        .add{
+            background-color: green;
+            box-shadow: green;
+            color: snow;
+            font-family: cursive;
+            font-size: 30px;
+            border-radius: 15px;
+        }
+        .del{
+            background-color: red;
+            box-shadow: red;
+            color: snow;
+            font-family: cursive;
+            font-size: 30px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>JavaScript Event Challenges</h1>
+        <h2>Challenge 26</h2>
+        <div>
+            <p>This is paragraph number 1</p>
+        </div>
+        <button class="add">Add paragraph +</button>
+        <button class="del">Delete paragraph -</button>
+    </center>
+    <script>
+
+        const divTag = document.querySelector('div');
+        var contador = 1;
+        var another = document.querySelectorAll('button')[0];
+        var less = document.querySelectorAll('button')[1];
+        another.addEventListener('click', function () {
+            contador++;
+            var newP = document.createElement('p');
+            var newPtext = document.createTextNode(`This is paragraph number ${contador}`);
+            newP.appendChild(newPtext);
+            divTag.appendChild(newP);
+        }); 
+
+        less.addEventListener('click', function () {
+            if (contador > 1) {
+                var delP = document.querySelectorAll('p');
+                divTag.removeChild(divTag.children[delP.length - 1]);
+                //alert("You are gonna delete the paragraph");
+                contador--;
+            } else {
+                alert("Don´t delete last paragraph")
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>
